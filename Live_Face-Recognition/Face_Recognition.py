@@ -5,5 +5,6 @@ img = cv2.imread('Images/Aish2.jpg')
 
 cv2.imshow('Clever Programmer Face Detector', img)
 
+cv2.waitKey(0)
 
 print("Code Completed")
