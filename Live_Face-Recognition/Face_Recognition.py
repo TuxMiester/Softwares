@@ -26,21 +26,23 @@ while True:
 
         
         id_, conf = recognizer.predict(roi_gray)
-        if conf>=45 and conf<=85:
-            print(id_)
-            print(labels[id_])
+        if conf>=45: #and conf<=85:
+            # print(id_)
+            # print(labels[id_])
             font = cv2.FONT_HERSHEY_SIMPLEX
             name = labels[id_]
             color = (255,255,255)
             stroke = 2
             cv2.putText(frame, name, (x, y), font, 1, color, stroke, cv2.LINE_AA)
-        # img_item = "Tux.png"
+        # img_item = "Tux3.png"
         # cv2.imwrite(img_item, roi_gray)
 
         color = (randrange(256), randrange(256), randrange(256))
         stroke = 2
         cv2.rectangle(frame, (x, y), (x+w, y+h), color, stroke)
-
+        # eyes = eye_cascade.detectMultiScale(roi_gray)
+        # for(ex, ey, ew, eh) in eyes:
+        #     cv2.reactangle(roi_color,(ex,ey),(ex+ew,ey+eh),(0,255,0),2)
 
     cv2.imshow('frame', frame)
     if cv2.waitKey(20) & 0xFF == ord('q'):
