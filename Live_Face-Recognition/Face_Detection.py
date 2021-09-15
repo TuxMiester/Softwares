@@ -1,5 +1,7 @@
 import cv2
+import numpy as np
 from random import randrange
+
 trained_face_data = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 
 #img = cv2.imread('Images/MomAishCW.jpg')
